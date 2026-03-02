@@ -28,13 +28,12 @@ header nav a:hover { text-decoration: underline; }
 .card-container {
   display: flex;
   gap:40px;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap; /* single horizontal line */
   overflow-x: auto;
   padding-bottom: 20px;
   scroll-behavior: smooth;
 }
 .card-container::-webkit-scrollbar { display: none; }
-
 .card { background: #62798d; width: 300px; border-radius: 8px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); overflow: hidden; cursor: pointer; transition: transform 0.3s ease; flex-shrink: 0; }
 .card:hover { transform: scale(1.1); }
 .card-top { background: #9ca3af; padding: 80px; text-align: center; font-weight: bold; }
@@ -45,8 +44,50 @@ header nav a:hover { text-decoration: underline; }
 .about, .contact { padding: 40px; }
 .about h2, .contact h2 { margin-bottom: 15px; }
 
-/* GAME APP */
+/* GAME APP (hidden initially) */
 #gameApp { display: none; background: #111; color: white; text-align: center; min-height: 100vh; padding: 20px; }
+
+/* SIGNUP POPUP */
+#signupPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#signupPopup.active { display: flex; }
+#signupPopup .popupBox {
+  background: #222;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+#signupPopup input {
+  padding: 10px;
+  margin-top: 20px;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+#signupPopup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: orange;
+  color: white;
+  transition: transform 0.25s ease;
+}
+#signupPopup button:hover { transform: scale(1.1); }
 
 /* SEARCH BAR */
 #searchBar { padding: 12px 15px; width: 90%; max-width: 500px; margin: 20px auto; display: block; font-size: 16px; border-radius: 8px; border: 2px solid #fff; background: #222; color: white; position: sticky; top: 0; z-index: 999; }
@@ -72,7 +113,7 @@ header nav a:hover { text-decoration: underline; }
 .game-card span { display: block; margin-top: 8px; font-weight: bold; }
 
 /* POPUP */
-.backblur { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.backblur { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 .backblur.active { opacity: 1; pointer-events: all; }
 .popup { background: gray; color: black; position: relative; padding: 20px; border: 3px solid red; border-radius: 10px; width: 80%; max-width: 600px; max-height: 85vh; text-align: center; transition: transform 0.3s ease; }
 .popup img { width: 100%; max-height: 60vh; object-fit: contain; border-radius: 12px; }
@@ -80,11 +121,6 @@ header nav a:hover { text-decoration: underline; }
 .popup p { font-size: 15px; color: red; margin: 10px 0; }
 .closebutton { position: absolute; top: 10px; right: 20px; font-size: 20px; color: yellow; cursor: pointer; transition: transform 0.15s ease; }
 .closebutton:hover { transform: scale(1.5); color: red; }
-
-/* SIGNUP FORM */
-#signupForm input { padding:10px; font-size:16px; width:200px; border-radius:5px; border:1px solid #fff; margin-bottom:15px; }
-#signupForm button { padding:10px 20px; font-size:16px; border:none; border-radius:5px; background:orange; color:white; cursor:pointer; }
-#signupForm button:hover { transform: scale(1.05); }
 </style>
 </head>
 <body>
@@ -105,14 +141,6 @@ header nav a:hover { text-decoration: underline; }
     <h1>Edu Calculators</h1>
     <p>Enjoy our army of calculators for different tasks</p>
     <button id="signupBtn">Sign Up</button>
-
-    <!-- FAKE SIGNUP FORM -->
-    <div id="signupForm" style="display:none;">
-      <h2>Create Your Account</h2>
-      <input type="text" id="usernameInput" placeholder="Enter a username">
-      <br>
-      <button id="continueBtn">Continue</button>
-    </div>
   </section>
 
   <section class="courses">
@@ -128,11 +156,11 @@ header nav a:hover { text-decoration: underline; }
       </div>
       <div class="card">
         <div class="card-top">Financial</div>
-        <div class="card-body"><h3>Financial</h3><p>Level up your finical skills with a accurate calculator, with budgeting features.</p></div>
+        <div class="card-body"><h3>Financial</h3><p>Level up your financial skills with budgeting features.</p></div>
       </div>
       <div class="card">
         <div class="card-top">Science</div>
-        <div class="card-body"><h3>Science</h3><p>Level yourself up with enhanced scientific skills with this advanced calculator to solve all your scientific issues.</p></div>
+        <div class="card-body"><h3>Science</h3><p>Advanced scientific calculator to solve all your issues.</p></div>
       </div>
     </div>
   </section>
@@ -146,6 +174,15 @@ header nav a:hover { text-decoration: underline; }
     <h2>Contact Us</h2>
     <p>Contact us about any problems at educalcs@gmail.com.</p>
   </section>
+</div>
+
+<!-- SIGNUP POPUP -->
+<div id="signupPopup">
+  <div class="popupBox">
+    <h2>Sign Up</h2>
+    <input type="text" id="usernameInput" placeholder="Enter your username">
+    <button id="continueBtn">Continue</button>
+  </div>
 </div>
 
 <!-- GAME APP -->
@@ -177,27 +214,32 @@ header nav a:hover { text-decoration: underline; }
 </section>
 
 <script>
-// SHOW SIGNUP FORM ON BUTTON
+// SHOW SIGNUP IF NOT DONE BEFORE
+if(!localStorage.getItem("signedUp")) {
+  document.getElementById("signupPopup").classList.add("active");
+} else {
+  // already signed up, skip landing
+  document.getElementById("landingPage").style.display = "none";
+  document.getElementById("gameApp").style.display = "block";
+}
+
+// SIGNUP BUTTON (opens popup)
 document.getElementById("signupBtn").addEventListener("click", () => {
-  document.getElementById("heroSection").style.display = "none"; // hide hero
-  document.getElementById("signupForm").style.display = "block";  // show signup form
+  document.getElementById("signupPopup").classList.add("active");
 });
 
-// CONTINUE TO GAME APP
+// CONTINUE BUTTON
 document.getElementById("continueBtn").addEventListener("click", () => {
   const username = document.getElementById("usernameInput").value.trim();
   if(!username) return alert("Please enter a username!");
+  
+  localStorage.setItem("signedUp", "true");
+  localStorage.setItem("username", username);
 
-  // Hide everything on landing page
+  document.getElementById("signupPopup").classList.remove("active");
   document.getElementById("landingPage").style.display = "none";
-
-  // Show game app
   document.getElementById("gameApp").style.display = "block";
-
-  // Show popup
   document.getElementById("popupBg").classList.add("active");
-
-  // Scroll to top of game app explicitly
   window.scrollTo({ top: 0, behavior: 'auto' });
 });
 
@@ -208,8 +250,8 @@ function closePopup() {
 
 /* ALL GAMES LIST */
 const gamesList = [
-  {name:"Stickman GTA City", img:"icon1.png", file:"games/game1.html", category:"Action"},
-  {name:"Drift King", img:"drift.png", file:"games/game2.html", category:"Driving"},
+  {name:"Stickman GTA City", img:"icon1.png", file:"game1.html", category:"Action"},
+  {name:"Drift King", img:"drift.png", file:"game2.html", category:"Driving"},
   {name:"Five Nights At Freddy's", img:"fnaf.png", file:"game3.html", category:"Action"},
   {name:"Highway Traffic", img:"highwaytraffic.png", file:"game4.html", category:"Driving"},
   {name:"OvO", img:"ovo.png", file:"game5.html", category:"Action"},
