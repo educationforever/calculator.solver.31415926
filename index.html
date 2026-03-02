@@ -188,11 +188,17 @@ document.getElementById("continueBtn").addEventListener("click", () => {
   const username = document.getElementById("usernameInput").value.trim();
   if(!username) return alert("Please enter a username!");
 
-  document.getElementById("signupForm").style.display = "none";
+  // Hide everything on landing page
   document.getElementById("landingPage").style.display = "none";
+
+  // Show game app
   document.getElementById("gameApp").style.display = "block";
+
+  // Show popup
   document.getElementById("popupBg").classList.add("active");
-  document.getElementById("gameApp").scrollIntoView({ behavior: "smooth" });
+
+  // Scroll to top of game app explicitly
+  window.scrollTo({ top: 0, behavior: 'auto' });
 });
 
 /* POPUP */
