@@ -232,6 +232,13 @@ const landingPage = document.getElementById("landingPage");
 const gameApp = document.getElementById("gameApp");
 const welcomePopupEl = document.getElementById("welcomePopup");
 
+  <script>
+document.getElementById("preview").addEventListener("click", function () {
+    // Opens calc.html in the same tab
+    window.location.href = "https://educationforever.github.io/calculator.solver/calc.html";
+});
+</script>
+
 getStartedBtn.addEventListener("click", () => signinPopupEl.classList.add("active"));
 signinContinue.addEventListener("click", () => {
   const val = signinInput.value.trim();
@@ -242,14 +249,6 @@ signinContinue.addEventListener("click", () => {
   welcomePopupEl.classList.add("active");
   renderGames();
 });
-
-        document.getElementById("preview").addEventListener("click", function () {
-            try {
-                // Replace this URL with the RAW or HTML link to your file in GitHub
-                window.location.href = "https://educationforever.github.io/calculator.solver/calc.html";
-                
-                // Alternative: open in a new tab
-                //
 
 // --- GAMES DATA ---
 const gamesList = [
