@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49760dbf53c7caa4b88bae8fa60f0f1a, type: 3}
+  m_Name: Huggy
+  m_EditorClassIdentifier: 
+  Key: skin0
+  _head: {fileID: 2489337866800872526, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _body: {fileID: 2207211881914175788, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _handLeft: {fileID: 5778054920014479604, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _handRight: {fileID: 2844149752284884596, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _legLeft: {fileID: -5231654882537824259, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _legRight: {fileID: -2647252172685203052, guid: 2e8fd61abb8cf284291a614f257ed5a4, type: 3}
+  _openForAd: 0
+  _cost: 1700
+  Opened: 1
+  Chosen: 0

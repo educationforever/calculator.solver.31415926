@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49760dbf53c7caa4b88bae8fa60f0f1a, type: 3}
+  m_Name: Unicorn
+  m_EditorClassIdentifier: 
+  Key: skin5
+  _head: {fileID: 7908419529212726476, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _body: {fileID: 2632691744738487065, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _handLeft: {fileID: 4149216185236418781, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _handRight: {fileID: 7068838510956378759, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _legLeft: {fileID: -1274042571209185390, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _legRight: {fileID: -4928096446953303642, guid: b8d6ccb2f7c18c243909b254fda1c74d, type: 3}
+  _openForAd: 0
+  _cost: 700
+  Opened: 0
+  Chosen: 0
