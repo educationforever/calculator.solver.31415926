@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Track Builder Bible thumbnail">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <g opacity="0.15" fill="#fff">
+    <circle cx="120" cy="90" r="18"/>
+    <circle cx="200" cy="130" r="10"/>
+    <circle cx="680" cy="80" r="14"/>
+    <circle cx="600" cy="360" r="12"/>
+    <rect x="60" y="330" width="80" height="8" rx="4"/>
+    <rect x="660" y="140" width="60" height="8" rx="4"/>
+  </g>
+  <g fill="#ffffff" opacity="0.18">
+    <rect x="520" y="60" width="140" height="140" transform="rotate(45 590 130)"/>
+    <rect x="140" y="260" width="90" height="90" transform="rotate(45 185 305)"/>
+  </g>
+  <g>
+    <text x="40" y="240" font-size="40" font-weight="700" fill="#ffffff">Track Builder Bible</text>
+    <text x="40" y="280" font-size="22" fill="#e6f6ff">Plan → Edit → Import → Test → Publish</text>
+    <g transform="translate(40,110)">
+      <rect x="0" y="0" width="64" height="64" rx="12" fill="#ffffff" opacity="0.18"/>
+      <text x="32" y="44" font-size="32" text-anchor="middle" fill="#ffffff">🛠️</text>
+    </g>
+  </g>
+</svg>
+

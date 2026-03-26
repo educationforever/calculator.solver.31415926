@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Ghost Racing thumbnail">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <g opacity="0.15" stroke="#fff" stroke-width="6" fill="none">
+    <path d="M40 340 C160 300 240 280 360 300 S600 360 760 320"/>
+  </g>
+  <g>
+    <text x="40" y="240" font-size="40" font-weight="700" fill="#ffffff">Ghost Racing</text>
+    <text x="40" y="280" font-size="22" fill="#eafff0">Segments • Risk • Consistency</text>
+    <g transform="translate(40,110)">
+      <rect x="0" y="0" width="64" height="64" rx="12" fill="#ffffff" opacity="0.18"/>
+      <text x="32" y="44" font-size="32" text-anchor="middle" fill="#ffffff">👻</text>
+    </g>
+  </g>
+</svg>
+
