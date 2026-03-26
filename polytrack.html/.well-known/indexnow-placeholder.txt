@@ -1,0 +1,11 @@
+Replace this file with your real IndexNow key file.
+
+Steps:
+1) Generate a key (GUID-like string), e.g. 32-64 hex chars.
+2) Rename this file to "<KEY>.txt" and keep it at site root (/.well-known is optional; IndexNow expects https://polytrack.best/<KEY>.txt).
+3) The file content must be exactly the key string.
+4) Set env and submit:
+   INDEXNOW_KEY=<KEY> npm run indexnow
+
+References: https://www.indexnow.org/
+
